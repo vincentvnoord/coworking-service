@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'AtHauss';
+  src: url('/AtHaussTRIAL-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-sans: 'AtHauss', Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --background: hsl(210, 11%, 98%);
+  --foreground: hsl(210%, 11%, 15%);
+
+  --primary-200: hsl(241, 98%, 83%);
+  --primary-400: hsl(241, 97%, 64%);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary-200: var(--primary-200);
+  --color-primary-400: var(--primary-400);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
