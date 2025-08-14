@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Button from "./button";
-import LogoIcon from "./icons/logo";
+import Button from "@/components/button";
+import LogoIcon from "@/components/icons/logo";
 import Link from "next/link";
 
 export const Header = () => {
@@ -17,9 +16,9 @@ export const Header = () => {
           </span>
         </Link>
         <nav className="flex items-center gap-8 space-x-4 p-6 text-lg">
-          <a href="#" className="text-gray-700 hover:text-gray-900">Locations</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900">Community</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900">Contacts</a>
+          <Link href="/locations" className="text-gray-700 hover:text-gray-900">Locations</Link>
+          <Link href="/community" className="text-gray-700 hover:text-gray-900">Community</Link>
+          <Link href="/contacts" className="text-gray-700 hover:text-gray-900">Contacts</Link>
         </nav>
       </div>
 
