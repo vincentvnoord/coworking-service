@@ -1,7 +1,7 @@
 "use client";
 
 import { Select } from 'radix-ui';
-import { HotDesk, Suitcase } from '@/components/icons';
+import { Desk, HotDesk, Suitcase } from '@/components/icons';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
@@ -14,7 +14,7 @@ type SearchSelectOption = {
 
 const options: SearchSelectOption[] = [
   { value: "hot-desk", label: "Hot Desk", icon: HotDesk, description: "Flexible seating. Drop in and work anywhere." },
-  { value: "dedicated-desk", label: "Dedicated Desk", icon: HotDesk, description: "Your own desk in a shared space -- stay set up." },
+  { value: "dedicated-desk", label: "Dedicated Desk", icon: Desk, description: "Your own desk in a shared space -- stay set up." },
   { value: "private-office", label: "Private Office", icon: HotDesk, description: "Enclosed office for teams or individuals." },
   { value: "meeting-rooms", label: "Meeting Rooms", icon: HotDesk, description: "Bookable by hour. Fully equipped." },
   { value: "virtual-office", label: "Virtual Office", icon: HotDesk, description: "Professional address, mail handling & more." },

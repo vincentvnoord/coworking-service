@@ -1,2 +1,3 @@
 export { HotDesk } from './hot-desk';
 export { Suitcase } from './suitcase';
+export { Desk } from './desk';

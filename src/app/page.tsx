@@ -7,7 +7,7 @@ export default function Home() {
     <div className="w-screen flex flex-col items-center px-6">
       <Header />
       <div className="w-full max-w-screen-xl flex gap-4 items-center pt-8">
-        <div className="flex flex-col w-full gap-2">
+        <div className="flex flex-col w-full gap-4">
           <h1 className="w-full text-5xl font-bold">
             Design Your Workday
           </h1>
