@@ -3,12 +3,11 @@ import Button from "@/components/button";
 import { LocationInput } from "@/components/main-page/location-input";
 import { SearchSelect } from "@/components/main-page/search-select";
 import { Desk, FlagCustom, Goal, PeopleIcon } from "@/components/icons";
-
 export const Hero = () => {
 
   return (
     <div className="w-full max-w-screen-xl flex gap-4 items-center pt-8">
-      <div className="flex flex-col w-full gap-4">
+      <div className="flex flex-col w-1/2 gap-4">
         <h1 className="flex w-full text-[2.5rem] font-semibold">
           Design Your
           <div
@@ -27,7 +26,7 @@ export const Hero = () => {
           </div>
         </h1>
 
-        <span className="text-lg">
+        <span className="text-lg w-full">
           Flexible spaces, focused energy, and everything you need to do your best work—your way.
         </span>
 
@@ -40,7 +39,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="w-full flex justify-center">
+      <div className="w-1/2 flex justify-start">
         <div className="w-fit grid grid-cols-2 gap-4">
           <HeroImage
             src="/images/focused-work.webp"
@@ -66,8 +65,7 @@ export const Hero = () => {
             icon={Desk}
           />
           <HeroImage
-            src="/images/work-with-purpose.jpg"
-            alt="Productive team in a meeting at desk with laptops and whiteboard in background."
+            src="/images/work-with-purpose.jpg" alt="Productive team in a meeting at desk with laptops and whiteboard in background."
             text="Work with purpose"
             labelClass="bottom-11 -left-12"
             icon={FlagCustom}
@@ -87,7 +85,7 @@ const HeroImage = ({ src, alt, text, labelClass, icon: Icon }: {
 }) => {
 
   return (
-    <div className="w-full relative h-64 aspect-square flex items-center justify-center">
+    <div className="w-full relative h-full aspect-square flex items-center justify-center">
       <Image
         src={src}
         alt={alt}

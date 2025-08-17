@@ -16,6 +16,7 @@
   --background: hsl(210, 11%, 98%);
   --foreground: hsl(210%, 11%, 15%);
 
+  --gray-1: hsl(210, 17%, 95%);
   --gray-2: hsl(210, 16%, 93%);
   --gray-3: hsl(210, 14%, 89%);
   --gray-4: hsl(210, 14%, 83%);
@@ -32,6 +33,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
+  --color-gray-1: var(--gray-1);
   --color-gray-2: var(--gray-2);
   --color-gray-3: var(--gray-3);
   --color-gray-4: var(--gray-4);
