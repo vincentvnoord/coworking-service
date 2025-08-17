@@ -3,6 +3,7 @@ import Button from "@/components/button";
 import { LocationInput } from "@/components/main-page/location-input";
 import { SearchSelect } from "@/components/main-page/search-select";
 import { Desk, FlagCustom, Goal, PeopleIcon } from "@/components/icons";
+
 export const Hero = () => {
 
   return (
@@ -38,7 +39,7 @@ export const Hero = () => {
           </Button>
         </div>
       </div>
-
+      
       <div className="w-1/2 flex justify-start">
         <div className="w-fit grid grid-cols-2 gap-4">
           <HeroImage
