@@ -22,6 +22,7 @@
   --gray-6: hsl(210, 7%, 56%);
   --gray-7: hsl(210, 9%, 31%);
 
+  --primary-100: hsl(240, 95%, 91%);
   --primary-200: hsl(241, 98%, 83%);
   --primary-300: hsl(241, 97%, 74%);
   --primary-400: hsl(241, 97%, 64%);
@@ -37,6 +38,7 @@
   --color-gray-6: var(--gray-6);
   --color-gray-7: var(--gray-7);
 
+  --color-primary-100: var(--primary-100);
   --color-primary-200: var(--primary-200);
   --color-primary-300: var(--primary-300);
   --color-primary-400: var(--primary-400);
@@ -49,4 +51,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+button {
+  cursor: pointer;
 }
