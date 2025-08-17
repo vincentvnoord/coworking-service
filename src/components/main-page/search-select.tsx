@@ -1,9 +1,11 @@
 "use client";
 
 import { Select } from 'radix-ui';
-import { Desk, HotDesk, Suitcase } from '@/components/icons';
+import { Desk, HotDesk, OfficeChair, Suitcase } from '@/components/icons';
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { NetworkCustom } from '../icons/network-custom';
+import { GlobeCustom } from '../icons/globe-custom';
 
 type SearchSelectOption = {
   value: string;
@@ -15,9 +17,9 @@ type SearchSelectOption = {
 const options: SearchSelectOption[] = [
   { value: "hot-desk", label: "Hot Desk", icon: HotDesk, description: "Flexible seating. Drop in and work anywhere." },
   { value: "dedicated-desk", label: "Dedicated Desk", icon: Desk, description: "Your own desk in a shared space -- stay set up." },
-  { value: "private-office", label: "Private Office", icon: HotDesk, description: "Enclosed office for teams or individuals." },
-  { value: "meeting-rooms", label: "Meeting Rooms", icon: HotDesk, description: "Bookable by hour. Fully equipped." },
-  { value: "virtual-office", label: "Virtual Office", icon: HotDesk, description: "Professional address, mail handling & more." },
+  { value: "private-office", label: "Private Office", icon: OfficeChair, description: "Enclosed office for teams or individuals." },
+  { value: "meeting-rooms", label: "Meeting Rooms", icon: NetworkCustom, description: "Bookable by hour. Fully equipped." },
+  { value: "virtual-office", label: "Virtual Office", icon: GlobeCustom, description: "Professional address, mail handling & more." },
 ]
 
 export const SearchSelect = () => {
@@ -64,11 +66,11 @@ export const SearchSelect = () => {
 }
 
 const SearchSelectItem = ({ option, isFirst, isLast }: { option: SearchSelectOption, isFirst: boolean, isLast: boolean }) => {
-  const borderRadius = isFirst ? "rounded-t-4xl" : (isLast && "rounded-b-4xl");
+  const borderRadius = isFirst ? "rounded-t-3xl" : (isLast && "rounded-b-3xl");
 
   return (
     <Select.Item key={option.value} value={option.value} className={`p-2 transition-colors duration-50 ease-in rounded flex items-center gap-3 w-full data-[highlighted]:outline-none hover:bg-gray-3 px-4 cursor-pointer outline-none ${borderRadius}`}>
-      <option.icon className="text-primary-300" width={16} height={16} />
+      <option.icon className="text-primary-300 w-6 h-6" width={16} height={16} />
       <div className="flex flex-col">
         <Select.ItemText className="font-bold">{option.label}</Select.ItemText>
         <span className="text-sm text-gray-7">{option.description}</span>
