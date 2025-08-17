@@ -1,5 +1,6 @@
 import Button from "@/components/button";
 import { Header } from "@/components/main-page/header";
+import { LocationInput } from "@/components/main-page/location-input";
 import { SearchSelect } from "@/components/main-page/search-select";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
           </span>
 
           <div className="flex flex-col pt-6 gap-4 max-w-[428px]">
+            <LocationInput />
             <SearchSelect />
             <Button className="text-lg font-medium py-4">
               Search
