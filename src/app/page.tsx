@@ -1,5 +1,6 @@
 import { Header } from "@/components/main-page/header";
 import { Hero } from "@/components/main-page/hero";
+import { PricingSection } from "@/components/main-page/pricing";
 import { WhyUsSection } from "@/components/main-page/why-us-section";
 import { WorkspaceCards } from "@/components/main-page/workspace-cards";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <WorkspaceCards />
       <WhyUsSection />
+      <PricingSection />
     </div>
   );
 }
