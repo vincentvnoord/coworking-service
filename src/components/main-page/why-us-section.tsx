@@ -37,9 +37,9 @@ const cards = [
 export const WhyUsSection = () => {
 
   return (
-    <div className="w-full text-lg pt-32 max-w-screen-xl flex flex-col gap-8">
-      <h3 className="text-3xl font-semibold">The WorkMosaic Way</h3>
-      <div className="grid gap-6 grid-cols-3">
+    <div className="w-full text-base md:text-lg  pt-32 max-w-screen-xl flex flex-col gap-8">
+      <h3 className="text-2xl sm:text-3xl font-semibold">The WorkMosaic Way</h3>
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
         {cards.map((card, index) => (
           <Card
             key={index}
@@ -57,10 +57,10 @@ export const WhyUsSection = () => {
 const Card = ({ isEven, title, description, icon: Icon }: { title: string, description: string, icon: React.ComponentType<React.SVGProps<SVGSVGElement>>, isEven: boolean }) => {
 
   return (
-    <div className={`w-full bg-gray-1 rounded-3xl p-6 flex flex-col gap-4 ${isEven ? "bg-primary-100" : "bg-primary-400 text-background"}`}>
-      <Icon width={40} height={40} className="w-10 h-10 text-primary-500" />
-      <h4 className="text-2xl font-semibold">{title}</h4>
-      <p className="text-xl">{description}</p>
+    <div className={`w-full rounded-3xl p-6 flex flex-col gap-4 ${isEven ? "bg-primary-100" : "bg-primary-400 text-background"}`}>
+      <Icon className="w-10 h-10 text-primary-500" />
+      <h4 className="text-xl sm:text-2xl font-semibold">{title}</h4>
+      <p className="xl:text-xl">{description}</p>
     </div>
   )
 }
