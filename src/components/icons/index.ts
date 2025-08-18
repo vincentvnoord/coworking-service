@@ -5,3 +5,8 @@ export { OfficeChair } from './office-chair';
 export { Goal } from './goal';
 export { PeopleIcon } from './people';
 export { FlagCustom } from './flag';
+export { MagicSparks } from './magic-sparks';
+export { PersonCheck } from './person-check';
+export { UnmatchedFlexibility } from './unmatched-flexibility';
+export { ArrowCircle } from './arrow-circle';
+export { UpchartArrow } from './up-chart-arrow';
