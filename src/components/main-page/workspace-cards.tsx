@@ -45,7 +45,7 @@ export const WorkspaceCards = () => {
 const WorkspaceCard = ({ title, description, image, href }: { title: string, description: string, image: string, href: string }) => {
 
   return (
-    <div className="w-full bg-gray-1 rounded-lg p-6 flex flex-col gap-2">
+    <div className="w-full bg-gray-1 rounded-2xl p-6 flex flex-col gap-2">
       <Image
         src={image}
         alt={title + " workspace"}

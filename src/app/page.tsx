@@ -1,5 +1,6 @@
 import { Header } from "@/components/main-page/header";
 import { Hero } from "@/components/main-page/hero";
+import { WhyUsSection } from "@/components/main-page/why-us-section";
 import { WorkspaceCards } from "@/components/main-page/workspace-cards";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <Hero />
       <WorkspaceCards />
+      <WhyUsSection />
     </div>
   );
 }
