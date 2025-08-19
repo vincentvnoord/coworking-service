@@ -1,5 +1,5 @@
 import { Clock3, Wifi } from "lucide-react";
-import { NetworkCustom, TagIcon, CoffeeCustom, HotDesk, InfinityGap, OfficeChair, Cutlery, Desk, IdIcon, Card, PeopleIcon } from "@/components/icons";
+import { NetworkCustom, TagIcon, CoffeeCustom, HotDesk, InfinityGap, OfficeChair, Cutlery, Desk, IdIcon, Card, PeopleIcon, Info } from "@/components/icons";
 import { PricingPlan } from "./pricing-plan";
 
 export const PricingSection = () => {
@@ -55,6 +55,13 @@ export const PricingSection = () => {
             { icon: TagIcon, text: "Discounts on booking private meeting rooms" },
           ]}
         />
+      </div>
+
+      <div className="flex gap-2 items-center pt-3">
+        <Info width={24} height={24} className="text-primary-400" />
+        <span className="text-gray-6">
+          All plans include access to our vibrant community, exclusive member events, and shared kitchen facilities
+        </span>
       </div>
     </div>
   );

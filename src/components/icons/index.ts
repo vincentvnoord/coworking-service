@@ -17,3 +17,4 @@ export { IdIcon } from './id';
 export { Card } from './card';
 export { NetworkCustom } from './network-custom';
 export { TagIcon } from './tag';
+export { Info } from './info';
