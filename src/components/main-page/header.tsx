@@ -23,10 +23,10 @@ export const Header = () => {
       </div>
 
       <div className="text-lg font-medium flex gap-3 items-center h-full">
-        <Button className="px-8 py-3" variant="outline">
+        <Button className="min-w-34 px-8 py-3" variant="outline">
           Log in
         </Button>
-        <Button className="px-8 py-3">
+        <Button className="min-w-34 px-8 py-3">
           Sign up
         </Button>
       </div>
