@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'athauss';
-  src: url('/athausstrial-regular.woff2') format('woff2');
+  font-family: 'AtHauss';
+  src: url('/AtHaussTRIAL-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --font-sans: 'athauss', arial, helvetica, sans-serif;
+  --font-sans: 'AtHauss', Arial, Helvetica, sans-serif;
 }
 
 :root {
