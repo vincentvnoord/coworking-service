@@ -6,7 +6,6 @@ import Button from "@/components/button";
 import { headerElements } from "./header";
 import Link from "next/link";
 
-
 export const MobileHeader = () => {
   const [open, setOpen] = useState(false);
 
