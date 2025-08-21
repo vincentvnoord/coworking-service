@@ -59,7 +59,7 @@ export const PricingSection = () => {
 
       <div className="flex gap-2 items-center pt-3">
         <Info width={24} height={24} className="text-primary-400" />
-        <span className="text-gray-6">
+        <span className="text-sm text-gray-6">
           All plans include access to our vibrant community, exclusive member events, and shared kitchen facilities
         </span>
       </div>
