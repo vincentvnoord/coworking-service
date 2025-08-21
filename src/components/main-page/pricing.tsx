@@ -5,16 +5,16 @@ import { PricingPlan } from "./pricing-plan";
 export const PricingSection = () => {
   return (
     <div className="w-full text-base md:text-lg  pt-32 max-w-screen-xl flex flex-col gap-8">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
         <h2 className="text-3xl font-semibold">Pricing Plans</h2>
-        <div className="flex items-center gap-2 bg-gray-1 rounded-full p-2">
+        <div className="hidden md:flex items-center w-fit gap-2 bg-gray-1 rounded-full p-2">
           <PlanOption option="Coworking Space" selected={true} />
           <PlanOption option="Private Office" selected={false} />
           <PlanOption option="Meeting Room" selected={false} />
         </div>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col gap-8 lg:gap-4 lg:flex-row">
         <PricingPlan
           icon={Clock3}
           title="Hot Desk"
@@ -58,7 +58,7 @@ export const PricingSection = () => {
       </div>
 
       <div className="flex gap-2 items-center pt-3">
-        <Info width={24} height={24} className="text-primary-400" />
+        <Info width={24} height={24} className="text-information flex-shrink-0" />
         <span className="text-sm text-gray-6">
           All plans include access to our vibrant community, exclusive member events, and shared kitchen facilities
         </span>
