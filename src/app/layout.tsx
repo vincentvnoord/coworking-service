@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Link from "next/link";
-import LogoIcon from "@/components/icons/logo";
+import Footer from "@/components/main-page/footer";
 
 export const metadata: Metadata = {
   title: "WorkMosaic",
@@ -19,16 +18,7 @@ export default function RootLayout({
         className={`antialiased`}
       >
         {children}
-        <footer>
-          <Link
-            href={"/"}
-            className="text-primary-400 flex gap-2 items-center">
-            <LogoIcon width={32} height={32} />
-            <span className="font-bold text-xl">
-              WorkMosaic
-            </span>
-          </Link>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

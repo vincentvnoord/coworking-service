@@ -18,3 +18,8 @@ export { Card } from './card';
 export { NetworkCustom } from './network-custom';
 export { TagIcon } from './tag';
 export { Info } from './info';
+export { Instagram } from './instagram';
+export { LinkedIn } from './linkedin';
+export { Facebook } from './facebook';
+export { Youtube } from './youtube';
+export { Copyright } from './copyright';

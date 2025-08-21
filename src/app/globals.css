@@ -14,7 +14,7 @@
 
 :root {
   --background: hsl(210, 11%, 98%);
-  --foreground: hsl(210%, 11%, 15%);
+  --foreground: hsl(210, 11%, 15%);
 
   --gray-1: hsl(210, 17%, 95%);
   --gray-2: hsl(210, 16%, 93%);
