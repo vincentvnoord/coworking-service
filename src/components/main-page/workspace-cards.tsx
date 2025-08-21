@@ -6,19 +6,19 @@ export const WorkspaceCards = () => {
 
   return (
     <div className="w-full text-lg pt-32 max-w-screen-xl flex flex-col gap-8">
-      <div className="flex justify-between items-center">
-        <h2 className="text-3xl font-semibold">Flexible Workspaces for Every Need</h2>
+      <div className="flex justify-between items-center gap-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold">Flexible Workspaces for Every Need</h2>
         <Link
           className="flex items-center gap-2 text-primary-400 font-medium"
           href={"/workspaces"}>
-          <span>
+          <span className="text-nowrap">
             VIEW ALL
           </span>
 
           <ChevronRight size={16} className="text-primary-500" />
         </Link>
       </div>
-      <div className="flex gap-6">
+      <div className="flex flex-col md:flex-row gap-2">
         <WorkspaceCard
           title="Hot Desks"
           description="Drop in, plug in, and get to work -- perfect for flexible schedules and solo focus."
@@ -45,13 +45,13 @@ export const WorkspaceCards = () => {
 const WorkspaceCard = ({ title, description, image, href }: { title: string, description: string, image: string, href: string }) => {
 
   return (
-    <div className="w-full bg-gray-1 rounded-2xl p-6 flex flex-col gap-2">
+    <div className="w-full bg-gray-1 rounded-2xl p-2 sm:p-4 lg:p-6 flex flex-col gap-2">
       <Image
         src={image}
         alt={title + " workspace"}
         width={400}
         height={800}
-        className="w-full h-86 object-cover rounded-lg mb-4"
+        className="w-full h-48 lg:h-86 object-cover rounded-lg mb-4"
       />
 
       <h3 className="text-2xl font-semibold">{title}</h3>

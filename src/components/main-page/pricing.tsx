@@ -6,7 +6,7 @@ export const PricingSection = () => {
   return (
     <div className="w-full text-base md:text-lg  pt-32 max-w-screen-xl flex flex-col gap-8">
       <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
-        <h2 className="text-3xl font-semibold">Pricing Plans</h2>
+        <h2 className="text-2xl sm:text-3xl font-semibold">Pricing Plans</h2>
         <div className="hidden md:flex items-center w-fit gap-2 bg-gray-1 rounded-full p-2">
           <PlanOption option="Coworking Space" selected={true} />
           <PlanOption option="Private Office" selected={false} />
