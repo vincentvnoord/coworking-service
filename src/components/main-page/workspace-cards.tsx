@@ -15,7 +15,7 @@ export const WorkspaceCards = () => {
             VIEW ALL
           </span>
 
-          <ChevronRight size={16} className="text-primary-500" />
+          <ChevronRight size={30} strokeWidth={1.2} className="text-primary-500" />
         </Link>
       </div>
       <div className="flex flex-col md:flex-row gap-2">
