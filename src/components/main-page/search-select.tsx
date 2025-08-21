@@ -49,7 +49,7 @@ export const SearchSelect = () => {
 
         <Select.Portal>
           <Select.Content
-            className="flex mt-2 border border-gray-3 shadow-sm flex-col w-[var(--radix-select-trigger-width)] bg-gray-2 p-2 rounded-4xl"
+            className="flex mt-2 border border-gray-3 shadow-sm flex-col w-[var(--radix-select-trigger-width)] bg-gray-2 p-1 rounded-4xl"
             position="popper"
           >
             {options.map((option, index) => (
@@ -66,7 +66,7 @@ export const SearchSelect = () => {
 }
 
 const SearchSelectItem = ({ option, isFirst, isLast }: { option: SearchSelectOption, isFirst: boolean, isLast: boolean }) => {
-  const borderRadius = isFirst ? "rounded-t-3xl" : (isLast && "rounded-b-3xl");
+  const borderRadius = isFirst ? "rounded-t-4xl" : (isLast && "rounded-b-4xl");
 
   return (
     <Select.Item key={option.value} value={option.value} className={`p-2 transition-colors duration-50 ease-in rounded flex items-center gap-3 w-full data-[highlighted]:outline-none hover:bg-gray-3 px-4 cursor-pointer outline-none ${borderRadius}`}>
