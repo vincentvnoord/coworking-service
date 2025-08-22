@@ -4,11 +4,10 @@ import { fetchLocationSuggestions } from "@/actions/auto-complete-locations";
 import debounce from "@/lib/debounce";
 import { MapPin } from "lucide-react"
 import { AnimatePresence, motion } from "motion/react";
-import { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 
-export const LocationInput = () => {
+export const LocationInput = ({ location, onChangeAction }: { location: string, onChangeAction: (loc: string) => void }) => {
   const [sessionToken, setSessionToken] = useState<string | null>(crypto.randomUUID());
-  const [location, setLocation] = useState("");
   const [open, setOpen] = useState(true);
   const [suggested, setSuggested] = useState<string[]>([]);
 
@@ -39,11 +38,11 @@ export const LocationInput = () => {
       setSessionToken(null);
     }
 
-    setLocation(value);
+    onChangeAction(value);
   }
 
   const setSelectedLocation = (loc: string) => {
-    setLocation(loc);
+    onChangeAction(loc);
     setOpen(false);
   }
 
@@ -60,7 +59,7 @@ export const LocationInput = () => {
         placeholder="Enter location"
       />
 
-      <MapPin className="text-gray-6 absolute top-2/7 origin-center left-4" />
+      <MapPin className="pointer-events-none text-gray-6 absolute top-2/7 origin-center left-4" />
 
       <AnimatePresence>
         {

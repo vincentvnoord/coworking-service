@@ -12,7 +12,7 @@ export const headerElements = [
 export const Header = () => {
 
   return (
-    <header className="flex min-h-18 items-center lg:pt-8 justify-between w-full max-w-screen-xl">
+    <header className="flex px-3 sm:px-6 xl:px-0 min-h-18 items-center lg:pt-8 justify-between w-full max-w-screen-xl">
       <div className="flex items-center gap-8">
         <Link
           href={"/"}

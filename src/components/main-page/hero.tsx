@@ -1,8 +1,6 @@
 import Image from 'next/image';
-import Button from "@/components/button";
-import { LocationInput } from "@/components/main-page/location-input";
-import { SearchSelect } from "@/components/main-page/search-select";
 import { Desk, FlagCustom, Goal, PeopleIcon } from "@/components/icons";
+import { MainPageSearch } from './search';
 
 export const Hero = () => {
 
@@ -27,17 +25,11 @@ export const Hero = () => {
           </div>
         </h1>
 
-        <span className="text-center lg:text-left max-w-96 text-lg w-full">
+        <span className="text-center lg:text-left max-w-96 lg:max-w-full text-lg w-full">
           Flexible spaces, focused energy, and everything you need to do your best work—your way.
         </span>
 
-        <div className="flex flex-col pt-6 gap-4 max-w-[428px]">
-          <LocationInput />
-          <SearchSelect />
-          <Button className="text-lg font-medium py-4">
-            Search
-          </Button>
-        </div>
+        <MainPageSearch />
       </div>
 
       <div className="lg:w-1/2 pt-6 lg:pt-0 max-w-xl flex justify-start">

@@ -28,10 +28,7 @@ export async function fetchLocationSuggestions(query: string, sessionToken: stri
   });
 
   const data = await res.json();
-
   const places = data.suggestions?.map((suggestion: { placePrediction: { text: { text: string } } }) => suggestion.placePrediction.text.text) || [];
-
-  console.log("Fetched suggestions:", data);
 
   return places;
 }

@@ -2,7 +2,7 @@
 
 import { Select } from 'radix-ui';
 import { Desk, HotDesk, OfficeChair, Suitcase } from '@/components/icons';
-import { useState } from 'react';
+import React, { SetStateAction, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { NetworkCustom } from '../icons/network-custom';
 import { GlobeCustom } from '../icons/globe-custom';
@@ -22,7 +22,7 @@ const options: SearchSelectOption[] = [
   { value: "virtual-office", label: "Virtual Office", icon: GlobeCustom, description: "Professional address, mail handling & more." },
 ]
 
-export const SearchSelect = () => {
+export const SearchSelect = ({ value, valueChangeAction }: { value?: string, valueChangeAction: React.Dispatch<SetStateAction<string | undefined>> }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -32,6 +32,8 @@ export const SearchSelect = () => {
       <Select.Root
         open={open}
         onOpenChange={setOpen}
+        value={value}
+        onValueChange={valueChangeAction}
       >
         <Select.Trigger
           className={`data-[placeholder]:text-gray-6 ${open ? "outline-primary-200 outline-2" : ""} gap-3 items-center text-lg cursor-pointer w-full px-5 p-4 bg-gray-2 flex justify-start rounded-full focus:outline-primary-200 focus:outline-2`}
