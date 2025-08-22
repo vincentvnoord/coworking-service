@@ -1,45 +1,50 @@
 "use client";
 
+import { fetchLocationSuggestions } from "@/actions/auto-complete-locations";
 import debounce from "@/lib/debounce";
 import { MapPin } from "lucide-react"
 import { AnimatePresence, motion } from "motion/react";
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 export const LocationInput = () => {
+  const [sessionToken, setSessionToken] = useState<string | null>(crypto.randomUUID());
   const [location, setLocation] = useState("");
   const [open, setOpen] = useState(true);
-  const [suggested, setSuggested] = useState<string[]>([
-    "New York, NY",
-    "Los Angeles, CA",
-    "Chicago, IL",
-    "Houston, TX",
-    "Phoenix, AZ",
-    "Philadelphia, PA",
-    "San Antonio, TX",
-    "San Diego, CA",
-    "Dallas, TX",
-    "San Jose, CA"
-  ]);
+  const [suggested, setSuggested] = useState<string[]>([]);
 
-  const handleSearch = (query: string) => {
-    // Simulate a search operation
-    console.log("Searching for:", query);
-  }
+  const handleSearch = useCallback(async (query: string) => {
+    if (!sessionToken) {
+      setSessionToken(crypto.randomUUID());
+    }
+
+    const res = await fetchLocationSuggestions(query, sessionToken || crypto.randomUUID());
+    setSuggested(res);
+  }, [sessionToken]);
 
   const debouncedPlaceQuery = useMemo(
     () => debounce(handleSearch, 300),
-    []
+    [handleSearch]
   )
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setLocation(value);
     if (value.length > 0) {
+      if (location.length === 0) {
+        setSessionToken(crypto.randomUUID());
+      }
+
       debouncedPlaceQuery(value);
     } else {
-      // Handle case when input is cleared
-      console.log("Input cleared");
+      // If input is cleared, reset session token
+      setSessionToken(null);
     }
+
+    setLocation(value);
+  }
+
+  const setSelectedLocation = (loc: string) => {
+    setLocation(loc);
+    setOpen(false);
   }
 
   return (
@@ -76,6 +81,7 @@ export const LocationInput = () => {
                     isLast={index === suggested.length - 1}
                     isFirst={index === 0}
                     singleItem={suggested.length === 1}
+                    setLocation={setSelectedLocation}
                   />
                 ))
               ) : (
@@ -89,16 +95,18 @@ export const LocationInput = () => {
   )
 }
 
-const OptionElement = ({ option, isLast, isFirst, singleItem }: { option: string, isLast: boolean, isFirst: boolean, singleItem: boolean }) => {
-  let borderRadius = isFirst ? "rounded rounded-t-4xl" : (isLast && "rounded rounded-b-4xl");
+const OptionElement = ({ option, isLast, isFirst, singleItem, setLocation }: { option: string, isLast: boolean, isFirst: boolean, singleItem: boolean, setLocation: (loc: string) => void }) => {
+  let borderRadius = isFirst ? "rounded-t-4xl" : (isLast && "rounded rounded-b-4xl");
   if (singleItem) {
     borderRadius = "rounded-3xl";
+  } else {
+    borderRadius += " rounded";
   }
 
   return (
-    <button role="listitem" key={option} className={`p-2 transition-colors duration-50 ease-in flex items-center gap-3 w-full data-[highlighted]:outline-none hover:bg-gray-3 px-4 cursor-pointer outline-none ${borderRadius}`}>
+    <button onClick={() => setLocation(option)} role="listitem" key={option} className={`p-3 transition-colors duration-50 ease-in flex items-center gap-3 w-full data-[highlighted]:outline-none hover:bg-gray-3 px-4 cursor-pointer outline-none ${borderRadius}`}>
       <div className="flex flex-col">
-        <span className="text-sm text-gray-7">{option}</span>
+        <span className="text-gray-7">{option}</span>
       </div>
     </button>
   )
