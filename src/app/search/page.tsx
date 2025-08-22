@@ -1,5 +1,6 @@
 import { SearchFiltersList } from "@/components/search/filters-list";
 import { SearchLocation } from "@/components/search/search-location";
+import { Suspense } from "react";
 
 export default function Search() {
   return (
@@ -9,8 +10,10 @@ export default function Search() {
       </div>
 
       <div className="flex-grow flex flex-col gap-4">
-        <SearchLocation />
-        <SearchFiltersList />
+        <Suspense>
+          <SearchLocation />
+          <SearchFiltersList />
+        </Suspense>
       </div>
 
     </main>
