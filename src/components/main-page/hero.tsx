@@ -1,8 +1,26 @@
+"use client";
+
 import Image from 'next/image';
 import { Desk, FlagCustom, Goal, PeopleIcon } from "@/components/icons";
 import { MainPageSearch } from './search';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+
+const words = ["Workday", "Success", "Venture", "Synergy"];
+// Find the longest word to use as a placeholder for sizing
+const longestWord = words.reduce((a, b) => (a.length > b.length ? a : b), "");
 
 export const Hero = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
 
   return (
     <div className="w-full max-w-screen-xl flex flex-col lg:flex-row gap-4 items-center pt-8">
@@ -12,9 +30,25 @@ export const Hero = () => {
           <div
             className="relative w-fit lg:pl-8"
           >
-            <span className="relative">
-              Workday
-            </span>
+            {/* New container for the text animation */}
+            <div className="relative">
+              {/* Invisible placeholder to maintain a constant width */}
+              <span className="invisible">{longestWord}</span>
+
+              {/* Animated text that appears on top of the placeholder */}
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={words[index]}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute left-0 top-0"
+                >
+                  {words[index]}
+                </motion.span>
+              </AnimatePresence>
+            </div>
             <Image
               className="absolute -z-10 -top-2 left-4 lg:-top-5 lg:left-8 scale-125"
               src={"hero-graphic.svg"}
