@@ -56,7 +56,7 @@ const WorkspaceCard = ({ title, description, image, href }: { title: string, des
 
       <h3 className="text-2xl font-semibold">{title}</h3>
       <p className="text-gray-600">{description}</p>
-      <Link href={"/workspaces/" + href} className="border-primary-200 border-2 w-fit p-2 rounded-full px-6 self-end mt-2 font-medium text-primary-500 hover:underline">
+      <Link href={"/workspaces/" + href} className="border-primary-200 border-2 w-fit p-2 rounded-full px-6 self-end mt-2 font-medium text-primary-500 hover:bg-primary-200 transition-colors hover:text-black">
         Learn more
       </Link>
     </div>
