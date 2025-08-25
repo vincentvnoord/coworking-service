@@ -6,33 +6,35 @@ export const Hero = () => {
 
   return (
     <div className="w-full max-w-screen-xl flex flex-col lg:flex-row gap-4 items-center pt-8">
-      <div className="flex flex-col lg:w-1/2 gap-4">
-        <h1 className="flex flex-col lg:flex-row items-center w-full text-[2.5rem] font-semibold">
-          Design Your
-          <div
-            className="relative w-fit lg:pl-8"
-          >
-            <span className="relative">
-              Workday
-            </span>
-            <Image
-              className="absolute -z-10 -top-2 left-4 lg:-top-5 lg:left-8 scale-125"
-              src={"hero-graphic.svg"}
-              alt="Hero Graphic Swirl -- WorkMosaic"
-              width={243}
-              height={200}
-            />
-          </div>
-        </h1>
+      <div className="flex lg:w-1/2 gap-4">
+        <div className="flex flex-col gap-4 max-w-[496px]">
+          <h1 className="flex flex-col lg:flex-row items-center w-full text-[2.5rem] font-semibold">
+            Design Your
+            <div
+              className="relative w-fit lg:pl-8"
+            >
+              <span className="relative">
+                Workday
+              </span>
+              <Image
+                className="absolute -z-10 -top-2 left-4 lg:-top-5 lg:left-8 scale-125"
+                src={"hero-graphic.svg"}
+                alt="Hero Graphic Swirl -- WorkMosaic"
+                width={243}
+                height={200}
+              />
+            </div>
+          </h1>
 
-        <span className="text-center lg:text-left max-w-96 lg:max-w-full text-lg w-full">
-          Flexible spaces, focused energy, and everything you need to do your best work—your way.
-        </span>
+          <span className="text-center lg:text-left text-gray-6 max-w-96 lg:max-w-full text-lg w-full">
+            Flexible spaces, focused energy, and everything you need to do your best work—your way.
+          </span>
 
-        <MainPageSearch />
+          <MainPageSearch />
+        </div>
       </div>
 
-      <div className="lg:w-1/2 pt-6 lg:pt-0 max-w-xl flex justify-start">
+      <div className="lg:w-full pt-6 lg:pt-0 max-w-xl flex justify-end">
         <div className="w-fit grid grid-cols-2 gap-4">
           <HeroImage
             src="/images/focused-work.webp"
