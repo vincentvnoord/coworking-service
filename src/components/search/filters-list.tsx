@@ -7,16 +7,26 @@ import { useSearchParams } from "next/navigation";
 export const SearchFiltersList = () => {
   const searchParams = useSearchParams();
   searchParams.entries();
+  const paramsArray = Array.from(searchParams.entries());
 
   return (
     <div className="w-full flex gap-4">
-      {Array.from(searchParams.entries()).map(([param, value]) => (
+      {paramsArray.map(([param, value]) => (
         <SearchFilterItem key={param} param={param} value={value} />
       ))}
 
-      <button className="text-gray-6 font-semibold">
-        Clear filters
-      </button>
+      {
+        paramsArray.length > 0 &&
+        <button onClick={() => {
+          const url = new URL(window.location.href);
+          url.search = '';
+          window.history.replaceState({}, '', url.toString());
+        }}
+          className="text-gray-6 font-semibold"
+        >
+          Clear filters
+        </button>
+      }
     </div>
   )
 }
