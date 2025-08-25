@@ -26,7 +26,7 @@ export const MainPageSearch = () => {
   }
 
   return (
-    <div className="flex flex-col pt-6 gap-4 max-w-[428px]">
+    <div className="flex flex-col pt-6 gap-4">
       <LocationInput location={location} onChangeAction={setLocation} />
       <SearchSelect value={workspace} valueChangeAction={setWorkspace} />
       <Button onClick={handleClick} className="text-lg font-medium py-4">
