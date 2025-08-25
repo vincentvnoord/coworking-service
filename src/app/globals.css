@@ -61,6 +61,10 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: not-allowed;
+}
+
 a:hover {
   color: var(--primary-300);
 }
