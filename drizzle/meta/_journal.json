@@ -8,6 +8,13 @@
       "when": 1756131111552,
       "tag": "0000_yellow_queen_noir",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1756134712006,
+      "tag": "0001_thankful_zaladane",
+      "breakpoints": true
     }
   ]
 }

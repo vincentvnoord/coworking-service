@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate": "npx drizzle-kit generate",
+    "migrate": "npx drizzle-kit migrate",
+    "seed": "npx tsx ./scripts/seed/index.ts"
   },
   "dependencies": {
     "dotenv": "^17.2.1",
