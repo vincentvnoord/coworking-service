@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WorkMosaic (Coworking Service Demo)
+![Next.js](https://img.shields.io/badge/Next.js-13-black?logo=next.js)
+![Postgres](https://img.shields.io/badge/Postgres-15-blue?logo=postgresql)
+![DrizzleORM](https://img.shields.io/badge/ORM-Drizzle-orange)
+
+WorkMosaic is a sample website for a company that serves coworking spaces throughout the world. This is usually in the form of an office, hot desk, dedicated desk or a bigger meetup space for events for example. Built with Next.js, it is optimized for SEO and fast load times, with the added benefit of quick hydration for client side interaction.
+
+## Table of Contents
+- [Key Features](#key-features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the app](#running-the-app)
+  - [Environment Variables](#environment-variables)
+  - [Running the database](#running-the-database)
+  - [Available Scripts](#available-scripts)
+
+## Key Features
+* UI/UX design optimized by a student designer.
+* Location input with suggestions via Google Places API.
+* Search form with workspace type select which leads to the search page.
+* Filtered search based on location, workspace and more.
+
+<img width="1657" height="984" alt="image" src="https://github.com/user-attachments/assets/d9b07f9e-3c8a-4a61-a47d-f34c881e292e" />
 
 ## Getting Started
+### Prerequisites
+Before you begin, make sure you have the following installed:
 
-First, run the development server:
+- [Node.js](https://nodejs.org/) **v22+**
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [PostgreSQL](https://www.postgresql.org/) database
 
+👉 If you prefer Docker, this project includes a `docker-compose.yml` file to spin up PostgreSQL automatically.
+
+### Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/vincentvnoord/coworking-service.git
+cd coworking-service
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the app
+It is a Next.js project, so to run it you do:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
+Create a `.env` file in the root of the project based on `.env.example`.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Required variables:
+- `DATABASE_URL` – Connection string for PostgreSQL  
+- `GOOGLE_PLACES_API_KEY` – Your Google Places API key  
 
-## Learn More
+Example:
+```env
+DATABASE_URL=postgresql://username:password@localhost:5432/workmosaic
+GOOGLE_PLACES_API_KEY=your_api_key_here
+```
 
-To learn more about Next.js, take a look at the following resources:
+If using the dockercompose.yml for the database include:
+```env
+DB_USERNAME=root
+DB_PASSWORD=rootpass
+DB_NAME=workmosaic_db
+```
+The Postgres database will use these credentials
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Running the database
+- To run the app without problems, you need to have a Postgres database ready (locally or on a server if preferred). The project includes a docker compose for running one locally.
+- The project uses Drizzle ORM and has generate and migrate scripts in the package.json.
+To get the correct data model, run:
+```bash
+npm run migrate
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Available Scripts
+- `npm run dev` – Start the Next.js development server  
+- `npm run build` – Build the app for production  
+- `npm run start` – Run the production build  
+- `npm run migrate` – Run database migrations (Drizzle ORM)  
+- `npm run generate` – Generate Drizzle schema  
+- `npm run seed` – Seed the database with initial data  
