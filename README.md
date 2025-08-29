@@ -1,6 +1,6 @@
 # WorkMosaic (Coworking Service Demo)
-![Next.js](https://img.shields.io/badge/Next.js-13-black?logo=next.js)
-![Postgres](https://img.shields.io/badge/Postgres-15-blue?logo=postgresql)
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![Postgres](https://img.shields.io/badge/Postgres-17-blue?logo=postgresql)
 ![DrizzleORM](https://img.shields.io/badge/ORM-Drizzle-orange)
 
 WorkMosaic is a sample website for a company that serves coworking spaces throughout the world. This is usually in the form of an office, hot desk, dedicated desk or a bigger meetup space for events for example. Built with Next.js, it is optimized for SEO and fast load times, with the added benefit of quick hydration for client side interaction.
